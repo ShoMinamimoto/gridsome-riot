@@ -8,5 +8,12 @@
   },
   "dependencies": {
     "gridsome": "^0.7.0"
+  },
+  "devDependencies": {
+    "gridsome-plugin-tailwindcss": "^4.1.1",
+    "sass": "^1.43.2",
+    "sass-loader": "10.1.1",
+    "style-resources-loader": "^1.4.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }
 }
