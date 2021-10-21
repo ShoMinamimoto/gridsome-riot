@@ -1,14 +1,15 @@
 <template>
   <Layout>
     <PageTitle>Links</PageTitle>
-    <p>Everything you need to know about FFXIV will go here.</p>
+    <LinkCategory />
   </Layout>
 </template>
 
 <script>
 import PageTitle from "../components/PageTitle";
+import LinkCategory from "../components/LinkCategory";
 export default {
-  components: {PageTitle},
+  components: {LinkCategory, PageTitle},
   metaInfo: {
     title: "Links"
   }

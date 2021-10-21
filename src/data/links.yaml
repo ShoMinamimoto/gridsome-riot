@@ -1,79 +1,101 @@
 ---
-- category: General
+- name: General
   subcats:
-  - subcat: Wiki
+  - name: Wiki
     image: 000087
     links:
-      - Final Fantasy XIV A Realm Reborn Wiki: https://ffxiv.consolegameswiki.com/wiki/FF14_Wiki
-      - Gamer Escape FFXIV: https://ffxiv.gamerescape.com
-  - subcat: Completion
+      - name: Final Fantasy XIV A Realm Reborn Wiki
+        url: https://ffxiv.consolegameswiki.com/wiki/FF14_Wiki
+      - name: Gamer Escape FFXIV
+        url: https://ffxiv.gamerescape.com
+  - name: Completion
     image: 000080
     links:
-      - Lalachievements: https://lalachievements.com/
-      - FFXIV Collect: https://ffxivcollect.com/
-- category: Disciples of War and Magic
+      - name: Lalachievements
+        url: https://lalachievements.com/
+      - name: FFXIV Collect
+        url: https://ffxivcollect.com/
+- name: Disciples of War and Magic
   subcats:
-  - subcat: Relic Tracker
+  - name: Relic Tracker
     image: 080152
     links:
-      - FFXIV Relic Tracker: https://ffxivrelictracker.com/
-  - subcat: Eureka
+      - name: FFXIV Relic Tracker
+        url: https://ffxivrelictracker.com/
+  - name: Eureka
     image: 020028
     links:
-      - Eureka Tracker: https://ffxiv-eureka.com/
-  - subcat: Bozja
+      - name: Eureka Tracker
+        url: https://ffxiv-eureka.com/
+  - name: Bozja
     image: 072617
     links:
-      - FFXIV Bozja: https://www.retahgaming.com/ffxiv/bozja.php
-  - subcat: Wondrous Tails
+      - name: FFXIV Bozja
+        url: https://www.retahgaming.com/ffxiv/bozja.php
+  - name: Wondrous Tails
     image: 025987
     links:
-      - FFXIV Wondrous Tails Calculator: http://ashtender.com/ffxiv/tails
-  - subcat: Hunt
+      - name: FFXIV Wondrous Tails Calculator
+        url: http://ashtender.com/ffxiv/tails
+  - name: Hunt
     image: 026569
     links:
-      - Cable Monkey's Hunt Maps: http://cablemonkey.us/huntmap2/
-- category: Disciples of the Hand and the Land
+      - name: Cable Monkey's Hunt Maps
+        url: http://cablemonkey.us/huntmap2/
+- name: Disciples of the Hand and the Land
   subcats:
-  - subcat: Crafting and Gathering
+  - name: Crafting and Gathering
     image: 000022
     links:
-      - Crafting as a Service: https://ffxivcrafting.com/
-      - Caimie Tsukino's Guide for Expert Recipes and Skybuilders' Tools: https://ffxivrealm.com/guides/caimie-tsukinos-guide-for-expert-recipes-and-skybuilders-tools.201/
-      - FFXIV Teamcraft: https://ffxivteamcraft.com/
-  - subcat: Fishing
+      - name: Crafting as a Service
+        url: https://ffxivcrafting.com/
+      - name: Caimie Tsukino's Guide for Expert Recipes and Skybuilders' Tools
+        url: https://ffxivrealm.com/guides/caimie-tsukinos-guide-for-expert-recipes-and-skybuilders-tools.201/
+      - name: FFXIV Teamcraft
+        url: https://ffxivteamcraft.com/
+  - name: Fishing
     image: 000050
     links:
-      - Ocean Fishing: https://ffxiv.pf-n.co/ocean-fishing
-      - FFX|V Fish Tracker App: https://ff14fish.carbuncleplushy.com/
-- category: Side Content
+      - name: Ocean Fishing
+        url: https://ffxiv.pf-n.co/ocean-fishing
+      - name: FFX|V Fish Tracker App
+        url: https://ff14fish.carbuncleplushy.com/
+- name: Side Content
   subcats:
-  - subcat: Glam
+  - name: Glam
     image: 000119
     links:
-      - Eorzea Collection: https://ffxiv.eorzeacollection.com/
-  - subcat: Fashion Challenge
+      - name: Eorzea Collection
+        url: https://ffxiv.eorzeacollection.com/
+  - name: Fashion Challenge
     image: 064045
     links:
-      - Kaiyoko’s Weekly Fashion Report: https://twitter.com/kaiyokostar
-  - subcat: Triple Triad
+      - name: Kaiyoko’s Weekly Fashion Report
+        url: https://twitter.com/kaiyokostar
+  - name: Triple Triad
     image: 027666
     links:
-      - Another Triple Triad Tracker: https://triad.raelys.com/
-- category: The Worst Part of FFXIV
+      - name: Another Triple Triad Tracker
+        url: https://triad.raelys.com/
+- name: The Worst Part of FFXIV
   subcats:
-  - subcat: Housing
+  - name: Housing
     image: 000052
     links:
-      - FFXIV Housing: https://en.ff14housing.com/
-      - Sadu Dothpawrl’s Housing Alerts: https://discord.gg/saChECt
-  - subcat: Gardening
+      - name: FFXIV Housing
+        url: https://en.ff14housing.com/
+      - name: Sadu Dothpawrl’s Housing Alerts
+        url: https://discord.gg/saChECt
+  - name: Gardening
     image: 027464
     links:
-      - FFXIV Gardening: https://www.ffxivgardening.com/
-  - subcat: Voyages
+      - name: FFXIV Gardening
+        url: https://www.ffxivgardening.com/
+  - name: Voyages
     image: 004797
     links:
-      - Airship Guide: https://forum.square-enix.com/ffxiv/threads/245872-Airship-Guide
-      - Submersible Information Thread: https://forum.square-enix.com/ffxiv/threads/357591-Submersible-Information-Thread
+      - name: Airship Guide
+        url: https://forum.square-enix.com/ffxiv/threads/245872-Airship-Guide
+      - name: Submersible Information Thread
+        url: https://forum.square-enix.com/ffxiv/threads/357591-Submersible-Information-Thread
 

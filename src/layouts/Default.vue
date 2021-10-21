@@ -1,3 +1,4 @@
+<!--suppress GraphQLUnresolvedReference -->
 <template>
   <div class="h-px min-h-screen p-4">
     <div class="layout bg-base rounded-lg flex flex-col min-h-full">
@@ -9,15 +10,15 @@
         </div>
         <div class="container mx-auto">
           <nav class="nav flex gap-1 justify-evenly">
-            <NavLink v-for="(link, name) in pages" :href="link" :key="name">{{name}}</NavLink>
+            <NavLink v-for="(link, name) in pages" :key="name" :href="link">{{ name }}</NavLink>
           </nav>
         </div>
       </header>
-      <div class="flex-grow text-tertiary">
+      <div class="flex-grow text-tertiary px-2">
         <slot/>
       </div>
       <footer>
-        <div class="bg-tertiary text-accent rounded-b-lg p-2">
+        <div class="bg-tertiary text-accent rounded-b-lg p-2 mt-4">
           <p>FINAL FANTASY XIV © 2010 - {{ year }} SQUARE ENIX CO., LTD. All Rights Reserved.</p>
         </div>
       </footer>
@@ -49,9 +50,9 @@ export default {
 
 <static-query>
 query {
-metadata {
-siteName
-}
+  metadata {
+    siteName
+  }
 }
 </static-query>
 
