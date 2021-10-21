@@ -8,7 +8,7 @@
           </strong>
         </div>
         <div class="container mx-auto">
-          <nav class="nav flex justify-evenly">
+          <nav class="nav flex gap-1 justify-evenly">
             <NavLink v-for="(link, name) in pages" :href="link" :key="name">{{name}}</NavLink>
           </nav>
         </div>

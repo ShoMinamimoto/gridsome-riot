@@ -1,5 +1,5 @@
 <template>
-  <g-link :to="href" class="text-accent text-center flex-grow rounded-lg">
+  <g-link :to="href" class="text-accent text-center text-xl font-semibold flex-1 rounded-lg p-1">
     <slot/>
   </g-link>
 </template>
@@ -16,8 +16,9 @@ export default {
 }
 </script>
 
+<!--suppress CssUnusedSymbol -->
 <style scoped>
-  .active{
+  .active, :hover{
     @apply bg-primary
   }
 </style>

@@ -1,12 +1,14 @@
 <template>
   <Layout>
-    <h1>Rainbow Riot Chest Management System</h1>
+    <PageTitle>Rainbow Riot Chest Management System</PageTitle>
     <p>CMS will go here.</p>
   </Layout>
 </template>
 
 <script>
+import PageTitle from "../components/PageTitle";
 export default {
+  components: {PageTitle},
   metaInfo: {
     title: 'Chest Management System'
   }
