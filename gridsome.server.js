@@ -5,9 +5,25 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const fs = require('fs');
+const yaml = require('js-yaml');
+
+const fileContents = fs.readFileSync('./src/data/links.yaml', 'utf8');
+const links = yaml.load(fileContents);
+
 module.exports = function (api) {
   api.loadSource(({ addCollection }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+  })
+
+  api.loadSource(async actions => {
+    const collection = actions.addCollection({
+      typeName: 'Links'
+    })
+
+    for (const link of links) {
+      collection.addNode(link);
+    }
   })
 
   api.createPages(({ createPage }) => {

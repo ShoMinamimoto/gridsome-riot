@@ -1,74 +1,79 @@
 ---
-- General:
-  - Wiki:
+- category: General
+  subcats:
+  - subcat: Wiki
     image: 000087
     links:
       - Final Fantasy XIV A Realm Reborn Wiki: https://ffxiv.consolegameswiki.com/wiki/FF14_Wiki
       - Gamer Escape FFXIV: https://ffxiv.gamerescape.com
-  - Completion:
+  - subcat: Completion
     image: 000080
     links:
       - Lalachievements: https://lalachievements.com/
       - FFXIV Collect: https://ffxivcollect.com/
-- Disciples of War and Magic:
-  - Relic Tracker:
-      image: 080152
-      links:
-        - FFXIV Relic Tracker: https://ffxivrelictracker.com/
-  - Eureka:
-      image: 020028
-      links:
-        - Eureka Tracker: https://ffxiv-eureka.com/
-  - Bozja:
-      image: 072617
-      links:
-        - FFXIV Bozja: https://www.retahgaming.com/ffxiv/bozja.php
-  - Wondrous Tails:
-      image: 025987
-      links:
-        - FFXIV Wondrous Tails Calculator: http://ashtender.com/ffxiv/tails
-  - Hunt:
-      image: 026569
-      links:
-        - Cable Monkey's Hunt Maps: http://cablemonkey.us/huntmap2/
-- Disciples of the Hand and the Land:
-    - Crafting &amp; Gathering:
-        image: 000022
-        links:
-          - Crafting as a Service: https://ffxivcrafting.com/
-          - Caimie Tsukino's Guide for Expert Recipes and Skybuilders' Tools: https://ffxivrealm.com/guides/caimie-tsukinos-guide-for-expert-recipes-and-skybuilders-tools.201/
-          - FFXIV Teamcraft: https://ffxivteamcraft.com/
-    - Fishing:
-        image: 000050
-        links:
-          - Ocean Fishing: https://ffxiv.pf-n.co/ocean-fishing
-          - FFX|V Fish Tracker App: https://ff14fish.carbuncleplushy.com/
-- Side Content:
-    - Glam:
-        image: 000119
-        links:
-          - Eorzea Collection: https://ffxiv.eorzeacollection.com/
-    - Fashion Challenge:
-        image: 064045
-        links:
-          - Kaiyoko’s Weekly Fashion Report: https://twitter.com/kaiyokostar
-    - Triple Triad:
-        image: 027666
-        links:
-          - Another Triple Triad Tracker: https://triad.raelys.com/
-- The Worst Part of FFXIV:
-    - Housing:
-        image: 000052
-        links:
-          - FFXIV Housing: https://en.ff14housing.com/
-          - Sadu Dothpawrl’s Housing Alerts: https://discord.gg/saChECt
-    - Gardening:
-        image: 027464
-        links:
-          - FFXIV Gardening: https://www.ffxivgardening.com/
-    - Voyages:
-        image: 004797
-        links:
-          - Airship Guide: https://forum.square-enix.com/ffxiv/threads/245872-Airship-Guide
-          - Submersible Information Thread: https://forum.square-enix.com/ffxiv/threads/357591-Submersible-Information-Thread
+- category: Disciples of War and Magic
+  subcats:
+  - subcat: Relic Tracker
+    image: 080152
+    links:
+      - FFXIV Relic Tracker: https://ffxivrelictracker.com/
+  - subcat: Eureka
+    image: 020028
+    links:
+      - Eureka Tracker: https://ffxiv-eureka.com/
+  - subcat: Bozja
+    image: 072617
+    links:
+      - FFXIV Bozja: https://www.retahgaming.com/ffxiv/bozja.php
+  - subcat: Wondrous Tails
+    image: 025987
+    links:
+      - FFXIV Wondrous Tails Calculator: http://ashtender.com/ffxiv/tails
+  - subcat: Hunt
+    image: 026569
+    links:
+      - Cable Monkey's Hunt Maps: http://cablemonkey.us/huntmap2/
+- category: Disciples of the Hand and the Land
+  subcats:
+  - subcat: Crafting and Gathering
+    image: 000022
+    links:
+      - Crafting as a Service: https://ffxivcrafting.com/
+      - Caimie Tsukino's Guide for Expert Recipes and Skybuilders' Tools: https://ffxivrealm.com/guides/caimie-tsukinos-guide-for-expert-recipes-and-skybuilders-tools.201/
+      - FFXIV Teamcraft: https://ffxivteamcraft.com/
+  - subcat: Fishing
+    image: 000050
+    links:
+      - Ocean Fishing: https://ffxiv.pf-n.co/ocean-fishing
+      - FFX|V Fish Tracker App: https://ff14fish.carbuncleplushy.com/
+- category: Side Content
+  subcats:
+  - subcat: Glam
+    image: 000119
+    links:
+      - Eorzea Collection: https://ffxiv.eorzeacollection.com/
+  - subcat: Fashion Challenge
+    image: 064045
+    links:
+      - Kaiyoko’s Weekly Fashion Report: https://twitter.com/kaiyokostar
+  - subcat: Triple Triad
+    image: 027666
+    links:
+      - Another Triple Triad Tracker: https://triad.raelys.com/
+- category: The Worst Part of FFXIV
+  subcats:
+  - subcat: Housing
+    image: 000052
+    links:
+      - FFXIV Housing: https://en.ff14housing.com/
+      - Sadu Dothpawrl’s Housing Alerts: https://discord.gg/saChECt
+  - subcat: Gardening
+    image: 027464
+    links:
+      - FFXIV Gardening: https://www.ffxivgardening.com/
+  - subcat: Voyages
+    image: 004797
+    links:
+      - Airship Guide: https://forum.square-enix.com/ffxiv/threads/245872-Airship-Guide
+      - Submersible Information Thread: https://forum.square-enix.com/ffxiv/threads/357591-Submersible-Information-Thread
 
