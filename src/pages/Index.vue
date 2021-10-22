@@ -24,7 +24,7 @@ export default {
   components: {PageTitle},
   metaInfo: {
     title: 'Hello, world!'
-  }
+  },
 }
 </script>
 

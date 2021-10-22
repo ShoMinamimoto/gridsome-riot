@@ -2,29 +2,26 @@
 <template>
   <Layout>
     <PageTitle>Voyage Helper</PageTitle>
+    <p>Information about our voyaging will go here.</p>
+    <div v-for="icon in $static.allIcon.edges">
+      <g-link :to="icon.node.path">{{icon.node.name}}</g-link>
+    </div>
   </Layout>
 </template>
 
-<page-query>
-query { allSubDestinations(filter: {Stars: {gt: 0}, Location: {ne: "str"}}, order: ASC) {
-  edges { node {
-    Location
-    Map
-  }
-}
-}
-}
-</page-query>
+<static-query>
+query { allIcon { edges { node {
+  name
+  path
+}}}}
+</static-query>
 
 <script>
 import PageTitle from "../components/PageTitle";
 export default {
   components: {PageTitle},
-  metaInfo:{
-    title: "Voyage Helper"
-  },
-  data(){
-
+  metaInfo: {
+    title: 'Voyages'
   }
 }
 </script>

@@ -8,5 +8,11 @@ module.exports = {
   siteName: 'Rainbow Riot Resource Repository',
   plugins: [{
     use: 'gridsome-plugin-tailwindcss'
-  }]
+  }],
+  templates: {
+    Icon: [{
+      path: '/icons/:name',
+      component: './src/templates/Icon.vue'
+    }]
+  }
 }
