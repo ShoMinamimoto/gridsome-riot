@@ -8,16 +8,19 @@
 const fs = require('fs');
 const yaml = require('js-yaml');
 const {get} = require("axios");
-
-const fileContents = fs.readFileSync('./src/data/links.yaml', 'utf8');
-const links = yaml.load(fileContents);
+const parse = require("csv-parse/lib/sync");
 
 module.exports = function (api) {
   api.loadSource(({ addCollection }) => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+    loadXIVData('SubmarineExploration.en.csv','SubDestinations',addCollection);
+    loadXIVData('SubmarineMap.en.csv','SubMaps',addCollection);
   })
 
   api.loadSource(async actions => {
+    const fileContents = fs.readFileSync('./src/data/links.yaml', 'utf8');
+    const links = yaml.load(fileContents);
+
     const collection = actions.addCollection({
       typeName: 'Links'
     })
@@ -46,4 +49,20 @@ module.exports = function (api) {
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
   })
+}
+
+function loadXIVData(file, collectionType, addCollection){
+  const data = fs.readFileSync('./src/data/' + file,'utf8');
+  const nodes = parse(data,{
+    columns: true,
+    skip_empty_lines: true,
+    from_line: 2,
+    cast: true
+  })
+  const collection = addCollection({
+    typeName: collectionType,
+  })
+  for (const node of nodes){
+    collection.addNode(node)
+  }
 }

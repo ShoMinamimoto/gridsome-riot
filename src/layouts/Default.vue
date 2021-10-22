@@ -38,7 +38,8 @@ export default {
         'Links': '/links/',
         'FC': '/free-company/',
         'Linkshells': '/linkshell/',
-        'Projects': '/projects/'
+        'Projects': '/projects/',
+        'Voyages': '/voyages/'
       }
     }
   },
