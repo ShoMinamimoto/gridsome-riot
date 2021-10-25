@@ -25,18 +25,11 @@ module.exports = function (api) {
       typeName: 'Links'
     })
 
-    const icollection = actions.addCollection({
-      typeName: 'Icon'
-    })
-
     for (const link of links) {
-      collection.addNode(link);
       for (const subcat of link.subcats){
-        icollection.addNode({
-          name: subcat.name,
-          image: require.resolve('./src/assets/'+String(subcat.image).padStart(6,'0')+'_hr1.png')
-        });
+        subcat.image = require.resolve('./src/assets/'+String(subcat.image).padStart(6,'0')+'_hr1.png')
       }
+      collection.addNode(link);
     }
   })
 

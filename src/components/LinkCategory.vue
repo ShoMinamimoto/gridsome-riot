@@ -10,7 +10,7 @@
           <div class="border-2 border-tertiary rounded-2xl mb-2"><span>{{ subcat.name }}</span></div>
           <div class="flex">
             <div class="self-center">
-              <img :src="imageUrl(subcat.image)" height="80" width="80" :alt="subcat.name"/>
+              <g-image :src="subcat.image"/>
             </div>
             <div class="flex justify-center flex-col flex-1 gap-2 underline">
               <div v-for="link in subcat.links">
@@ -30,7 +30,7 @@ query { allLinks(order:ASC) { edges { node {
   name
   subcats {
     name
-    image
+    image (height:80, width:80, quality:100)
     links {
       name
       url
@@ -42,11 +42,6 @@ query { allLinks(order:ASC) { edges { node {
 <script>
 export default {
   name: "LinkCategory",
-  methods: {
-    imageUrl(img) {
-      return "/images/" + String(img).padStart(6, '0') + "_hr1.png"
-    }
-  }
 }
 </script>
 
