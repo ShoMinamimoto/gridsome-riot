@@ -1,27 +1,30 @@
 <!--suppress GraphQLUnresolvedReference -->
 <template>
   <div class="h-px min-h-screen p-4">
-    <div class="layout bg-base rounded-lg flex flex-col min-h-full">
-      <header class="header bg-secondary rounded-t-lg p-2">
-        <div class="container flex mx-auto justify-center mb-2">
-          <strong>
-            <g-link class="text-accent text-3xl" to="/">{{ $static.metadata.siteName }}</g-link>
-          </strong>
+    <div class="relative p-4 bg-xivbase shadow-lg rounded-lg border border-black ring-2 ring-xivring flex flex-col min-h-full text-white">
+      <div class="absolute inset-x-0 top-0 h-1/5 max-h-20 bg-gradient-to-t from-xivbase to-xivtop rounded-t-lg"></div>
+      <div class="relative flex flex-col flex-grow min-h-full">
+        <header class="header p-2">
+          <div class="container flex mx-auto justify-center mb-2">
+            <strong>
+              <g-link class="text-3xl" to="/">{{ $static.metadata.siteName }}</g-link>
+            </strong>
+          </div>
+          <div class="container mx-auto">
+            <nav class="nav flex gap-1 justify-evenly">
+              <NavLink v-for="(link, name) in pages" :key="name" :href="link">{{ name }}</NavLink>
+            </nav>
+          </div>
+        </header>
+        <div class="flex-grow px-2">
+          <slot/>
         </div>
-        <div class="container mx-auto">
-          <nav class="nav flex gap-1 justify-evenly">
-            <NavLink v-for="(link, name) in pages" :key="name" :href="link">{{ name }}</NavLink>
-          </nav>
-        </div>
-      </header>
-      <div class="flex-grow text-tertiary px-2">
-        <slot/>
+        <footer>
+          <div class="text-xivring p-2 mt-4">
+            <p>FINAL FANTASY XIV © 2010 - {{ year }} SQUARE ENIX CO., LTD. All Rights Reserved.</p>
+          </div>
+        </footer>
       </div>
-      <footer>
-        <div class="bg-tertiary text-accent rounded-b-lg p-2 mt-4">
-          <p>FINAL FANTASY XIV © 2010 - {{ year }} SQUARE ENIX CO., LTD. All Rights Reserved.</p>
-        </div>
-      </footer>
     </div>
   </div>
 </template>

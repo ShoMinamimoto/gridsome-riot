@@ -13,6 +13,9 @@ module.exports = {
         tertiary: '#090934',
         accent: '#fcba12',
         base: '#f7edd4',
+        xivbase: '#313131',
+        xivtop: '#606060',
+        xivring: '#FFD700'
       }
     },
   },
