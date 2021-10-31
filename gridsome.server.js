@@ -49,6 +49,23 @@ module.exports = function (api) {
     }
   })
 
+  api.loadSource( async actions => {
+    const linkshells = []
+    linkshells.push(await get('https://xivapi.com/linkshell/21110623253435815'))
+    linkshells.push(await get('https://xivapi.com/linkshell/crossworld/91e7d9196ab597890242f19596374caf03c7431e'))
+    linkshells.push(await get('https://xivapi.com/linkshell/crossworld/2c95d6547efe0d19ce593cbe841ca0453dd760fb'))
+
+    const collection = actions.addCollection({
+      typeName: 'Linkshells'
+    })
+    for(linksh of linkshells) {
+      collection.addNode({
+        name: linksh.data.Linkshell.Profile.Name,
+        members: linksh.data.Linkshell.Results
+      })
+    }
+  })
+
   api.createPages(({ createPage }) => {
     // Use the Pages API here: https://gridsome.org/docs/pages-api/
   })
