@@ -20,7 +20,8 @@
             <th class="border-white border-2">Rank</th>
             <th class="border-white border-2">Name</th>
           </tr>
-          <tr v-for="member in $static.allCompanyMembers.edges">
+          <tr v-for="(member, index) in $static.allCompanyMembers.edges"
+              :class="{hidden: (index >= indexMax || index < indexMin)}">
             <td class="border-white border-2">
               <a :href="'https://na.finalfantasyxiv.com/lodestone/character/' + member.node.ID" target="_blank"><img
                   :src="member.node.Avatar"/></a>
@@ -35,11 +36,18 @@
             </td>
           </tr>
         </table>
+        <div class="flex w-1/2 mx-auto text-center m-4 font-bold text-xl">
+          <button class="flex-grow" type="button" @click="pageFirst">&laquo;</button>
+          <button class="flex-grow" type="button" @click="pagePrev">&lt;</button>
+          <span class="flex-grow">{{ page }} / {{ pageMax }}</span>
+          <button class="flex-grow" type="button" @click="pageNext">&gt;</button>
+          <button class="flex-grow" type="button" @click="pageLast">&raquo;</button>
+        </div>
       </div>
       <div class="flex-grow w-1/2 text-lg">
         <h3 class="text-xl m-4"><strong>Our FC estate:</strong></h3>
         <span class="ml-4">{{ $static.allFreeCompany.edges[0].node.Estate.Name }}
-          {{$static.allFreeCompany.edges[0].node.Estate.Plot}} on
+          {{ $static.allFreeCompany.edges[0].node.Estate.Plot }} on
         {{ $static.allFreeCompany.edges[0].node.DC }},
           {{ $static.allFreeCompany.edges[0].node.Server }}</span>
       </div>
@@ -76,9 +84,35 @@ export default {
   },
   data() {
     return {
-      fcInfo: null
+      page: 1,
+      pageMax: null
     }
   },
+  computed: {
+    indexMin: function () {
+      return (this.page - 1) * 10;
+    },
+    indexMax: function () {
+      return this.page * 10;
+    }
+  },
+  methods: {
+    pageNext: function () {
+      if (this.page < this.pageMax)this.page++;
+    },
+    pagePrev: function () {
+      if (this.page > 1) this.page--;
+    },
+    pageFirst: function () {
+      this.page = 1;
+    },
+    pageLast: function () {
+      this.page = this.pageMax;
+    }
+  },
+  mounted () {
+    this.pageMax = Math.floor(this.$static.allCompanyMembers.edges.length / 10)+1;
+  }
 }
 </script>
 
