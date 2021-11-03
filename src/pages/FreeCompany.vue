@@ -41,10 +41,10 @@
       </div>
       <div class="flex-grow w-1/2 text-lg">
         <h3 class="text-xl m-4"><strong>Our FC estate:</strong></h3>
-        <span class="ml-4">{{ $static.allFreeCompany.edges[0].node.Estate.Name }}
-          {{ $static.allFreeCompany.edges[0].node.Estate.Plot }} on
-        {{ $static.allFreeCompany.edges[0].node.DC }},
-          {{ $static.allFreeCompany.edges[0].node.Server }}</span>
+        <p class="text-xl text-center"><strong>{{ $static.allFreeCompany.edges[0].node.Estate.Name }}</strong></p>
+        <p class="text-xl text-center">at {{ $static.allFreeCompany.edges[0].node.Estate.Plot }}</p>
+        <p class="text-xl text-center">on {{ $static.allFreeCompany.edges[0].node.DC }},
+          {{ $static.allFreeCompany.edges[0].node.Server }}</p>
       </div>
     </div>
   </Layout>
