@@ -5,6 +5,9 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
+const iconLocation = './src/assets/icons/'
+const dataLocation = './src/data/'
+
 const fs = require('fs');
 const yaml = require('js-yaml');
 const {get} = require("axios");
@@ -18,7 +21,7 @@ module.exports = function (api) {
     })
 
     api.loadSource(async actions => {
-        const fileContents = fs.readFileSync('./src/data/links.yaml', 'utf8');
+        const fileContents = fs.readFileSync(dataLocation + 'links.yaml', 'utf8');
         const links = yaml.load(fileContents);
 
         const collection = actions.addCollection({
@@ -27,7 +30,7 @@ module.exports = function (api) {
 
         for (const link of links) {
             for (const subcat of link.subcats) {
-                subcat.image = require.resolve('./src/assets/' + String(subcat.image).padStart(6, '0') + '_hr1.png')
+                subcat.image = require.resolve(iconLocation + String(subcat.image).padStart(6, '0') + '_hr1.png')
             }
             collection.addNode(link);
         }
@@ -66,13 +69,13 @@ module.exports = function (api) {
         }
     })
 
-    api.createPages(({createPage}) => {
+    /*api.createPages(({createPage}) => {
         // Use the Pages API here: https://gridsome.org/docs/pages-api/
-    })
+    })*/
 }
 
 function loadXIVData(file, collectionType, addCollection) {
-    const data = fs.readFileSync('./src/data/' + file, 'utf8');
+    const data = fs.readFileSync(dataLocation + file, 'utf8');
     const nodes = parse(data, {
         columns: true,
         skip_empty_lines: true,
