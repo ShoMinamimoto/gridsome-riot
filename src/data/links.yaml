@@ -1,103 +1,103 @@
 ---
 - name: General
   subcats:
-  - name: Wiki
-    image: 000087
-    links:
-      - name: Final Fantasy XIV A Realm Reborn Wiki
-        url: https://ffxiv.consolegameswiki.com/wiki/FF14_Wiki
-      - name: Gamer Escape FFXIV
-        url: https://ffxiv.gamerescape.com
-  - name: Completion
-    image: 000080
-    links:
-      - name: Lalachievements
-        url: https://lalachievements.com/
-      - name: FFXIV Collect
-        url: https://ffxivcollect.com/
+    - name: Wiki
+      image: 000087
+      links:
+        - name: Final Fantasy XIV A Realm Reborn Wiki
+          url: https://ffxiv.consolegameswiki.com/wiki/FF14_Wiki
+        - name: Gamer Escape FFXIV
+          url: https://ffxiv.gamerescape.com
+    - name: Completion
+      image: 000080
+      links:
+        - name: Lalachievements
+          url: https://lalachievements.com/
+        - name: FFXIV Collect
+          url: https://ffxivcollect.com/
 - name: Disciples of War and Magic
   subcats:
-  - name: Relic Tracker
-    image: 080152
-    links:
-      - name: FFXIV Relic Tracker
-        url: https://ffxivrelictracker.com/
-  - name: Eureka
-    image: 020028
-    links:
-      - name: Eureka Tracker
-        url: https://ffxiv-eureka.com/
-  - name: Bozja
-    image: 072617
-    links:
-      - name: FFXIV Bozja
-        url: https://www.retahgaming.com/ffxiv/bozja.php
-  - name: Wondrous Tails
-    image: 025987
-    links:
-      - name: FFXIV Wondrous Tails Calculator
-        url: http://ashtender.com/ffxiv/tails
-  - name: Hunt
-    image: 026569
-    links:
-      - name: Cable Monkey's Hunt Maps
-        url: http://cablemonkey.us/huntmap2/
-      - name: Crystal's The Pursuit Hunts
-        url: https://discord.gg/S8fKQvh
+    - name: Relic Tracker
+      image: 080152
+      links:
+        - name: FFXIV Relic Tracker
+          url: https://ffxivrelictracker.com/
+    - name: Eureka
+      image: 020028
+      links:
+        - name: Eureka Tracker
+          url: https://ffxiv-eureka.com/
+    - name: Bozja
+      image: 072617
+      links:
+        - name: FFXIV Bozja
+          url: https://www.retahgaming.com/ffxiv/bozja.php
+    - name: Wondrous Tails
+      image: 025987
+      links:
+        - name: FFXIV Wondrous Tails Calculator
+          url: http://ashtender.com/ffxiv/tails
+    - name: Hunt
+      image: 026569
+      links:
+        - name: Cable Monkey's Hunt Maps
+          url: http://cablemonkey.us/huntmap2/
+        - name: Crystal's The Pursuit Hunts
+          url: https://discord.gg/S8fKQvh
 - name: Disciples of the Hand and the Land
   subcats:
-  - name: Crafting and Gathering
-    image: 000022
-    links:
-      - name: Crafting as a Service
-        url: https://ffxivcrafting.com/
-      - name: Caimie Tsukino's Guide for Expert Recipes and Skybuilders' Tools
-        url: https://ffxivrealm.com/guides/caimie-tsukinos-guide-for-expert-recipes-and-skybuilders-tools.201/
-      - name: FFXIV Teamcraft
-        url: https://ffxivteamcraft.com/
-  - name: Fishing
-    image: 000050
-    links:
-      - name: Ocean Fishing
-        url: https://ffxiv.pf-n.co/ocean-fishing
-      - name: FFX|V Fish Tracker App
-        url: https://ff14fish.carbuncleplushy.com/
+    - name: Crafting and Gathering
+      image: 000022
+      links:
+        - name: Crafting as a Service
+          url: https://ffxivcrafting.com/
+        - name: Caimie Tsukino's Guide for Expert Recipes and Skybuilders' Tools
+          url: https://ffxivrealm.com/guides/caimie-tsukinos-guide-for-expert-recipes-and-skybuilders-tools.201/
+        - name: FFXIV Teamcraft
+          url: https://ffxivteamcraft.com/
+    - name: Fishing
+      image: 000050
+      links:
+        - name: Ocean Fishing
+          url: https://ffxiv.pf-n.co/ocean-fishing
+        - name: FFX|V Fish Tracker App
+          url: https://ff14fish.carbuncleplushy.com/
 - name: Side Content
   subcats:
-  - name: Glam
-    image: 000119
-    links:
-      - name: Eorzea Collection
-        url: https://ffxiv.eorzeacollection.com/
-  - name: Fashion Challenge
-    image: 064045
-    links:
-      - name: Kaiyoko’s Weekly Fashion Report
-        url: https://twitter.com/kaiyokostar
-  - name: Triple Triad
-    image: 027666
-    links:
-      - name: Another Triple Triad Tracker
-        url: https://triad.raelys.com/
+    - name: Glam
+      image: 000119
+      links:
+        - name: Eorzea Collection
+          url: https://ffxiv.eorzeacollection.com/
+    - name: Fashion Challenge
+      image: 064045
+      links:
+        - name: Kaiyoko’s Weekly Fashion Report
+          url: https://twitter.com/kaiyokostar
+    - name: Triple Triad
+      image: 027666
+      links:
+        - name: Another Triple Triad Tracker
+          url: https://triad.raelys.com/
 - name: The Worst Part of FFXIV
   subcats:
-  - name: Housing
-    image: 000052
-    links:
-      - name: FFXIV Housing
-        url: https://en.ff14housing.com/
-      - name: Sadu Dothpawrl’s Housing Alerts
-        url: https://discord.gg/saChECt
-  - name: Gardening
-    image: 027464
-    links:
-      - name: FFXIV Gardening
-        url: https://www.ffxivgardening.com/
-  - name: Voyages
-    image: 004797
-    links:
-      - name: Airship Guide
-        url: https://forum.square-enix.com/ffxiv/threads/245872-Airship-Guide
-      - name: Submersible Information Thread
-        url: https://forum.square-enix.com/ffxiv/threads/357591-Submersible-Information-Thread
+    - name: Housing
+      image: 000052
+      links:
+        - name: FFXIV Housing
+          url: https://en.ff14housing.com/
+        - name: Sadu Dothpawrl’s Housing Alerts
+          url: https://discord.gg/saChECt
+    - name: Gardening
+      image: 027464
+      links:
+        - name: FFXIV Gardening
+          url: https://www.ffxivgardening.com/
+    - name: Voyages
+      image: 004797
+      links:
+        - name: Airship Guide
+          url: https://forum.square-enix.com/ffxiv/threads/245872-Airship-Guide
+        - name: Submersible Information Thread
+          url: https://forum.square-enix.com/ffxiv/threads/357591-Submersible-Information-Thread
 
