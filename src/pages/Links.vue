@@ -1,13 +1,14 @@
 <template>
   <Layout>
     <PageTitle>Links</PageTitle>
-    <LinkCategory />
+    <LinkCategory/>
   </Layout>
 </template>
 
 <script>
 import PageTitle from "../components/PageTitle";
 import LinkCategory from "../components/LinkCategory";
+
 export default {
   components: {LinkCategory, PageTitle},
   metaInfo: {

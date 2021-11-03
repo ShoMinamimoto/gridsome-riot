@@ -52,21 +52,21 @@
 
 <static-query>
 query { allFreeCompany{ edges{ node{
-Crest
-DC
-Estate {
-Name
-Plot
-}
-Server
+  Crest
+  DC
+  Estate {
+    Name
+    Plot
+  }
+  Server
 }}}
-allCompanyMembers(order: ASC){ edges{ node{
-Avatar
-ID
-Name
-Rank
-RankIcon
-}}}}
+  allCompanyMembers(order: ASC){ edges{ node{
+    Avatar
+    ID
+    Name
+    Rank
+    RankIcon
+  }}}}
 </static-query>
 
 <script>
