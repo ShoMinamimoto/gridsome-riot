@@ -36,13 +36,8 @@
             </td>
           </tr>
         </table>
-        <div class="flex w-1/2 mx-auto text-center m-4 font-bold text-xl">
-          <button class="flex-grow" type="button" @click="pageFirst">&laquo;</button>
-          <button class="flex-grow" type="button" @click="pagePrev">&lt;</button>
-          <span class="flex-grow">{{ page }} / {{ pageMax }}</span>
-          <button class="flex-grow" type="button" @click="pageNext">&gt;</button>
-          <button class="flex-grow" type="button" @click="pageLast">&raquo;</button>
-        </div>
+        <Pagination :items="$static.allCompanyMembers.edges" :page-length="pageLength"
+                    @page-change="page = $event"/>
       </div>
       <div class="flex-grow w-1/2 text-lg">
         <h3 class="text-xl m-4"><strong>Our FC estate:</strong></h3>
@@ -57,61 +52,45 @@
 
 <static-query>
 query { allFreeCompany{ edges{ node{
-  Crest
-  DC
-  Estate {
-    Name
-    Plot
-  }
-  Server
+Crest
+DC
+Estate {
+Name
+Plot
+}
+Server
 }}}
-  allCompanyMembers(order: ASC){ edges{ node{
-    Avatar
-    ID
-    Name
-    Rank
-    RankIcon
-  }}}}
+allCompanyMembers(order: ASC){ edges{ node{
+Avatar
+ID
+Name
+Rank
+RankIcon
+}}}}
 </static-query>
 
 <script>
 import PageTitle from "../components/PageTitle";
+import Pagination from "../components/Pagination";
 
 export default {
-  components: {PageTitle},
+  components: {Pagination, PageTitle},
   metaInfo: {
     title: "FC"
   },
   data() {
     return {
       page: 1,
-      pageMax: null
+      pageLength: 10
     }
   },
   computed: {
     indexMin: function () {
-      return (this.page - 1) * 10;
+      return (this.page - 1) * this.pageLength;
     },
     indexMax: function () {
-      return this.page * 10;
+      return this.page * this.pageLength;
     }
-  },
-  methods: {
-    pageNext: function () {
-      if (this.page < this.pageMax)this.page++;
-    },
-    pagePrev: function () {
-      if (this.page > 1) this.page--;
-    },
-    pageFirst: function () {
-      this.page = 1;
-    },
-    pageLast: function () {
-      this.page = this.pageMax;
-    }
-  },
-  mounted () {
-    this.pageMax = Math.floor(this.$static.allCompanyMembers.edges.length / 10)+1;
   }
 }
 </script>
