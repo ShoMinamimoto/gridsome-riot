@@ -1,7 +1,8 @@
 <!--suppress GraphQLUnresolvedReference -->
 <template>
   <div class="h-px min-h-screen p-4">
-    <div class="relative p-4 bg-xivbase shadow-lg rounded-lg border border-black ring-2 ring-xivring flex flex-col min-h-full text-white">
+    <div
+        class="relative p-4 bg-xivbase shadow-lg rounded-lg border border-black ring-2 ring-xivring flex flex-col min-h-full text-white">
       <div class="absolute inset-x-0 top-0 h-1/5 max-h-20 bg-gradient-to-t from-xivbase to-xivtop rounded-t-lg"></div>
       <div class="relative flex flex-col flex-grow min-h-full">
         <header class="header p-2">
