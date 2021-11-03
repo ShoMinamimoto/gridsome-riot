@@ -1,7 +1,7 @@
 <!--suppress GraphQLUnresolvedReference -->
 <template>
   <div>
-    <g-image :src="$page.post.image" />
+    <g-image :src="$page.post.image"/>
   </div>
 </template>
 
