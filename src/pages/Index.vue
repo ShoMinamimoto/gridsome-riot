@@ -2,9 +2,9 @@
   <Layout>
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="~/favicon.png" width="135"/>
+    <g-image class="mx-auto" alt="Kweh" src="~/assets/Alpha.png" width="135"/>
 
-    <PageTitle>Hello, world!</PageTitle>
+    <PageTitle>Be Gay, Start Riot!</PageTitle>
 
     <p>
       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur excepturi labore tempore expedita, et iste
