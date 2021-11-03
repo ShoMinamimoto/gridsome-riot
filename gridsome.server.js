@@ -11,78 +11,78 @@ const {get} = require("axios");
 const parse = require("csv-parse/lib/sync");
 
 module.exports = function (api) {
-  api.loadSource(({ addCollection }) => {
-    // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
-    loadXIVData('SubmarineExploration.en.csv','SubDestinations',addCollection);
-    loadXIVData('SubmarineMap.en.csv','SubMaps',addCollection);
-  })
-
-  api.loadSource(async actions => {
-    const fileContents = fs.readFileSync('./src/data/links.yaml', 'utf8');
-    const links = yaml.load(fileContents);
-
-    const collection = actions.addCollection({
-      typeName: 'Links'
+    api.loadSource(({addCollection}) => {
+        // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
+        loadXIVData('SubmarineExploration.en.csv', 'SubDestinations', addCollection);
+        loadXIVData('SubmarineMap.en.csv', 'SubMaps', addCollection);
     })
 
-    for (const link of links) {
-      for (const subcat of link.subcats){
-        subcat.image = require.resolve('./src/assets/'+String(subcat.image).padStart(6,'0')+'_hr1.png')
-      }
-      collection.addNode(link);
-    }
-  })
+    api.loadSource(async actions => {
+        const fileContents = fs.readFileSync('./src/data/links.yaml', 'utf8');
+        const links = yaml.load(fileContents);
 
-  api.loadSource(async actions => {
-    const fcInfo = await get('https://xivapi.com/freecompany/9233927348481553472?extended=1&data=FCM')
+        const collection = actions.addCollection({
+            typeName: 'Links'
+        })
 
-    const collection = actions.addCollection({
-      typeName: 'FreeCompany'
+        for (const link of links) {
+            for (const subcat of link.subcats) {
+                subcat.image = require.resolve('./src/assets/' + String(subcat.image).padStart(6, '0') + '_hr1.png')
+            }
+            collection.addNode(link);
+        }
     })
-    collection.addNode(fcInfo.data.FreeCompany)
 
-    const collection2 = actions.addCollection({
-      typeName: 'CompanyMembers'
+    api.loadSource(async actions => {
+        const fcInfo = await get('https://xivapi.com/freecompany/9233927348481553472?extended=1&data=FCM')
+
+        const collection = actions.addCollection({
+            typeName: 'FreeCompany'
+        })
+        collection.addNode(fcInfo.data.FreeCompany)
+
+        const collection2 = actions.addCollection({
+            typeName: 'CompanyMembers'
+        })
+        for (member of fcInfo.data.FreeCompanyMembers) {
+            collection2.addNode(member)
+        }
     })
-    for(member of fcInfo.data.FreeCompanyMembers) {
-      collection2.addNode(member)
-    }
-  })
 
-  api.loadSource( async actions => {
-    const linkshells = []
-    linkshells.push(await get('https://xivapi.com/linkshell/21110623253435815'))
-    linkshells.push(await get('https://xivapi.com/linkshell/crossworld/91e7d9196ab597890242f19596374caf03c7431e'))
-    linkshells.push(await get('https://xivapi.com/linkshell/crossworld/2c95d6547efe0d19ce593cbe841ca0453dd760fb'))
+    api.loadSource(async actions => {
+        const linkshells = []
+        linkshells.push(await get('https://xivapi.com/linkshell/21110623253435815'))
+        linkshells.push(await get('https://xivapi.com/linkshell/crossworld/91e7d9196ab597890242f19596374caf03c7431e'))
+        linkshells.push(await get('https://xivapi.com/linkshell/crossworld/2c95d6547efe0d19ce593cbe841ca0453dd760fb'))
 
-    const collection = actions.addCollection({
-      typeName: 'Linkshells'
+        const collection = actions.addCollection({
+            typeName: 'Linkshells'
+        })
+        for (linksh of linkshells) {
+            collection.addNode({
+                name: linksh.data.Linkshell.Profile.Name,
+                members: linksh.data.Linkshell.Results
+            })
+        }
     })
-    for(linksh of linkshells) {
-      collection.addNode({
-        name: linksh.data.Linkshell.Profile.Name,
-        members: linksh.data.Linkshell.Results
-      })
-    }
-  })
 
-  api.createPages(({ createPage }) => {
-    // Use the Pages API here: https://gridsome.org/docs/pages-api/
-  })
+    api.createPages(({createPage}) => {
+        // Use the Pages API here: https://gridsome.org/docs/pages-api/
+    })
 }
 
-function loadXIVData(file, collectionType, addCollection){
-  const data = fs.readFileSync('./src/data/' + file,'utf8');
-  const nodes = parse(data,{
-    columns: true,
-    skip_empty_lines: true,
-    from_line: 2,
-    cast: true
-  })
-  const collection = addCollection({
-    typeName: collectionType,
-  })
-  for (const node of nodes){
-    collection.addNode(node)
-  }
+function loadXIVData(file, collectionType, addCollection) {
+    const data = fs.readFileSync('./src/data/' + file, 'utf8');
+    const nodes = parse(data, {
+        columns: true,
+        skip_empty_lines: true,
+        from_line: 2,
+        cast: true
+    })
+    const collection = addCollection({
+        typeName: collectionType,
+    })
+    for (const node of nodes) {
+        collection.addNode(node)
+    }
 }
