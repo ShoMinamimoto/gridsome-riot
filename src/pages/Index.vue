@@ -25,7 +25,7 @@ import PageTitle from "../components/PageTitle";
 export default {
   components: {PageTitle},
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Kweh!'
   },
 }
 </script>
