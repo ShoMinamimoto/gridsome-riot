@@ -18,7 +18,7 @@ export default {
 
 <!--suppress CssUnusedSymbol -->
 <style scoped>
-  .active, :hover{
-    @apply bg-primary
-  }
+.active, :hover {
+  @apply bg-primary
+}
 </style>

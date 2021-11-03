@@ -7,10 +7,12 @@
       </div>
       <div class="grid grid-cols-3 justify-between justify-items-stretch gap-4">
         <div v-for="subcat in category.node.subcats">
-          <div class="border-2 border-white rounded-2xl mb-2"><span class="text-lg font-semibold">{{ subcat.name }}</span></div>
+          <div class="border-2 border-white rounded-2xl mb-2"><span class="text-lg font-semibold">{{
+              subcat.name
+            }}</span></div>
           <div class="flex">
             <div class="self-center">
-              <g-image class="border border-black ring-2 ring-xivring rounded-xl shadow-lg" :src="subcat.image"/>
+              <g-image :src="subcat.image" class="border border-black ring-2 ring-xivring rounded-xl shadow-lg"/>
             </div>
             <div class="flex justify-center flex-col flex-1 gap-2 underline">
               <div v-for="link in subcat.links">
