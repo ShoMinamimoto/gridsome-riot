@@ -14,10 +14,15 @@ const {get} = require("axios");
 const parse = require("csv-parse/lib/sync");
 
 module.exports = function (api) {
-    api.loadSource(({addCollection}) => {
+    api.loadSource(async ({addCollection}) => {
         // Use the Data Store API here: https://gridsome.org/docs/data-store-api/
         loadXIVData('SubmarineExploration.en.csv', 'SubDestinations', addCollection);
         loadXIVData('SubmarineMap.en.csv', 'SubMaps', addCollection);
+        await loadLodestone('fc', '9233927348481553472', 'FreeCompany', addCollection);
+        await loadLodestone('fcmembers', '9233927348481553472', 'CompanyMembers', addCollection);
+        await loadLodestone('ls', '21110623253435815', 'Linkshell1', addCollection);
+        await loadLodestone('cwls', '91e7d9196ab597890242f19596374caf03c7431e', 'Linkshell2', addCollection);
+        await loadLodestone('cwls', '2c95d6547efe0d19ce593cbe841ca0453dd760fb', 'Linkshell3', addCollection);
     })
 
     api.loadSource(async actions => {
@@ -36,27 +41,28 @@ module.exports = function (api) {
         }
     })
 
-    api.loadSource(async actions => {
-        const fcInfo = await get('https://xivapi.com/freecompany/9233927348481553472?extended=1&data=FCM')
+    /*api.loadSource(async actions => {
+        const fcInfo = await get('http://lodestone.rriot/lodestone.php?type=fc&id=9233927348481553472')
+        const fcMember = await get('http://lodestone.rriot/lodestone.php?type=fcmembers&id=9233927348481553472')
 
         const collection = actions.addCollection({
             typeName: 'FreeCompany'
         })
-        collection.addNode(fcInfo.data.FreeCompany)
+        collection.addNode(fcInfo.data)
 
         const collection2 = actions.addCollection({
             typeName: 'CompanyMembers'
         })
-        for (member of fcInfo.data.FreeCompanyMembers) {
+        for (member of fcMember.data.Results) {
             collection2.addNode(member)
         }
-    })
+    })*/
 
-    api.loadSource(async actions => {
+    /*api.loadSource(async actions => {
         const linkshells = []
-        linkshells.push(await get('https://xivapi.com/linkshell/21110623253435815'))
-        linkshells.push(await get('https://xivapi.com/linkshell/crossworld/91e7d9196ab597890242f19596374caf03c7431e'))
-        linkshells.push(await get('https://xivapi.com/linkshell/crossworld/2c95d6547efe0d19ce593cbe841ca0453dd760fb'))
+        linkshells.push(await get('http://lodestone.rriot/lodestone.php?type=ls&id=21110623253435815'))
+        linkshells.push(await get('http://lodestone.rriot/lodestone.php?type=cwls&id=91e7d9196ab597890242f19596374caf03c7431e'))
+        linkshells.push(await get('http://lodestone.rriot/lodestone.php?type=cwls&id=2c95d6547efe0d19ce593cbe841ca0453dd760fb'))
 
         const collection = actions.addCollection({
             typeName: 'Linkshells'
@@ -67,7 +73,7 @@ module.exports = function (api) {
                 members: linksh.data.Linkshell.Results
             })
         }
-    })
+    })*/
 
     /*api.createPages(({createPage}) => {
         // Use the Pages API here: https://gridsome.org/docs/pages-api/
@@ -87,5 +93,26 @@ function loadXIVData(file, collectionType, addCollection) {
     })
     for (const node of nodes) {
         collection.addNode(node)
+    }
+}
+
+async function loadLodestone(infoType, id, collectionType, addCollection, page = null) {
+    let url = "http://lodestone.rriot/lodestone.php?type=" + infoType + "&id=" + id;
+    if (page) {
+        url = url + "&page=" + page;
+    }
+    const results = await get(url);
+    const collection = addCollection({
+        typeName: collectionType,
+    })
+    if (results.data?.Pagination) {
+        for (const result of results.data.Results) {
+            collection.addNode(result)
+        }
+        if (results.data.Pagination.PageNext) {
+            await loadLodestone(infoType, id, collectionType, addCollection, results.data.Pagination.PageNext)
+        }
+    } else {
+        collection.addNode(results.data)
     }
 }
