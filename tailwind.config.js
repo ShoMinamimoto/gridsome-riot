@@ -1,9 +1,14 @@
 module.exports = {
-    purge: [
+    purge: {
+        content: [
         './src/**/*.html',
         './src/**/*.vue',
         './src/**/*.js',
-    ],
+        ],
+        options: {
+            whitelistPatterns: [/svg.*/, /fa.*/]
+        }
+    },
     darkMode: false, // or 'media' or 'class'
     theme: {
         extend: {

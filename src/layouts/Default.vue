@@ -22,7 +22,7 @@
         </div>
         <footer>
           <div class="text-xivring p-2 mt-4">
-            <g-link class="float-right" to="/about/">About</g-link>
+            <g-link class="float-right" to="/about/"><font-awesome :icon="['fas','info-circle']"></font-awesome> About</g-link>
             <p>FINAL FANTASY XIV © 2010 - {{ year }} SQUARE ENIX CO., LTD. All Rights Reserved.</p>
           </div>
         </footer>
