@@ -6,6 +6,10 @@
   </Layout>
 </template>
 
+<static-query>
+
+</static-query>
+
 <script>
 import PageTitle from "../components/PageTitle";
 

@@ -15,8 +15,14 @@ const parse = require("csv-parse/lib/sync");
 
 module.exports = function (api) {
     api.loadSource(async ({addCollection}) => {
+        loadXIVData('AirshipExplorationPart.csv', 'AirshipParts', addCollection);
+        loadXIVData('AirshipExplorationPoint.en.csv', 'AirshipDestinations', addCollection);
+        loadXIVData('CharaMakeName.en.csv', 'CharacterNames', addCollection);
+        loadXIVData('Item.en.csv', 'Items', addCollection);
         loadXIVData('SubmarineExploration.en.csv', 'SubDestinations', addCollection);
         loadXIVData('SubmarineMap.en.csv', 'SubMaps', addCollection);
+        loadXIVData('SubmarinePart.csv', 'SubParts', addCollection);
+        loadXIVData('SubmarineRank.csv', 'SubRank', addCollection);
         await loadLodestone('fc', '9233927348481553472', 'FreeCompany', addCollection);
         await loadLodestone('fcmembers', '9233927348481553472', 'CompanyMembers', addCollection);
         await loadLodestone('ls', '21110623253435815', 'Linkshell1', addCollection);
