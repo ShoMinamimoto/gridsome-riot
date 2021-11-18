@@ -10,7 +10,7 @@
         <slot name="list"></slot>
       </div>
     </div>
-    <div class="flex-grow min-h-full blog-border p-16">
+    <div class="flex-grow min-h-full blog-border p-20 bg-blogbg">
       <slot></slot>
     </div>
   </div>
@@ -24,6 +24,6 @@ export default {
 
 <style scoped>
   .blog-border{
-    border-image: url("../assets/icons/076910_hr1.png") 30% / auto / 0 stretch ;
+    border-image: url("../assets/icons/076902_hr1.png") 30% / auto / 0 stretch ;
   }
 </style>

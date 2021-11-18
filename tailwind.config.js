@@ -20,7 +20,8 @@ module.exports = {
                 base: '#f7edd4',
                 xivbase: '#404040',
                 xivtop: '#636363',
-                xivring: '#FFD700'
+                xivring: '#FFD700',
+                blogbg: '#e2ddd3'
             }
         },
     },
