@@ -10,11 +10,12 @@
 </template>
 
 <static-query>
-query { allItems(filter:{ItemUICategory:{in:["Airship Hull","Airship Rigging","Airship Forecastle","Airship Aftcastle"]}}){
-  edges{
-    node{
-      Name
-    }}}
+query {
+  allItems(filter:{ItemUICategory:{in:["Airship Hull","Airship Rigging","Airship Forecastle","Airship Aftcastle"]}}){
+    edges{
+      node{
+        Name
+      }}}
   allAirshipParts(sort:{order:ASC} skip:2){
     edges{
       node{
