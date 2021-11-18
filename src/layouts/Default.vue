@@ -6,6 +6,7 @@
       <div class="absolute inset-x-0 top-0 h-1/5 max-h-20 bg-gradient-to-t from-xivbase to-xivtop rounded-t-lg"></div>
       <div class="relative flex flex-col flex-grow min-h-full">
         <header class="header p-2">
+          <g-link class="absolute right-0" to="/blog-test/">Blog &Gt;</g-link>
           <div class="container flex mx-auto justify-center mb-2">
             <strong>
               <g-link class="text-3xl" to="/">{{ $static.metadata.siteName }}</g-link>
